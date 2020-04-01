@@ -255,7 +255,7 @@ market|string|true|N/A|Trading markets|btc_usdt, eth_usdt...
 ``
 >Request Parameter
 
-Parameter|Type|True or false|Default value|Description	Ranges
+Parameter|Type|True or false|Default value|Description|Ranges
 -|-|-|-|-|-
 market|string|true|N/A|Trading markets|btc_usdt, eth_usdt...
 
@@ -850,13 +850,11 @@ pageSize|integer|true|10|Quantity per page|
  			"depth": 12,                // Number of confirmations
  			"creatTime": 1563465915000,
  			"manageTime": 1563466260000,
- 			"txHash": "0x4bcd1207e57dc96737d20198c8792c3340386e7f247571458d17671b7834ddd6", 
-// Trading Hash
- 			"status": 2,       			
-// 0, initial 1, failure 2, success 5, pending confirmation
- 			"coin": "usdt",             // current coins
- 			"innerTransfer": 0			
-// Whether the record of the internal addresses transfer 		}],
+ 			"txHash": "0x4bcd1207e57dc96737d20198c8792c3340386e7f247571458d17671b7834ddd6", // Trading Hash
+ 			"status": 2, // 0, initial 1, failure 2, success 5, pending confirmation
+ 			"coin": "usdt",   // current coins
+ 			"innerTransfer": 0			// Whether the record of the internal addresses transfer 		
+ 		}],
  		"pageSize": 100
  	},
  	"info": "success"
@@ -888,16 +886,13 @@ pageSize|integer|true|10|Quantity per page|
 			"chainName": "ERC-20",      // Public-chain name
 			"amount": 0.002000000,      // Amount of Coins
 			"chain": "eth",             // Public chain coin
-			"address": "0x8390b456fe03139ba402f45be9110a5fadf7e862",    
-// Coins with memo like EOS are separated by '_'			"creatTime": 1563513678000, // Withdrawal time
+			"address": "0x8390b456fe03139ba402f45be9110a5fadf7e862", // Coins with memo like EOS are separated by '_'			
+            "creatTime": 1563513678000, // Withdrawal time
 			"fee": 0.001000000,         // Withdrawal fees
 			"manageTime": 1563513698000,// Processing time
-			"status": 4,				    
-//0, initial  1, failure 2, success 5, pending confirmation
-			"coin": "usdt",				
-// current coins			
-"innerTransfer": 0			
-//Whether the record of the internal addresses transfer
+			"status": 4,			    //0, initial  1, failure 2, success 5, pending confirmation
+			"coin": "usdt",				// current coins			
+            "innerTransfer": 0			//Whether the record of the internal addresses transfer
 		}]
 	},
 	"info": "success"
