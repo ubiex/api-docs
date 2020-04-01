@@ -853,7 +853,7 @@ pageSize|integer|true|10|Quantity per page|
  			"txHash": "0x4bcd1207e57dc96737d20198c8792c3340386e7f247571458d17671b7834ddd6", // Trading Hash
  			"status": 2,                // 0, initial 1, failure 2, success 5, pending confirmation
  			"coin": "usdt",             // current coins
- 			"innerTransfer": 0			// Whether the record of the internal addresses transfer 		
+ 			"innerTransfer": 0          // Whether the record of the internal addresses transfer 		
  		}],
  		"pageSize": 100
  	},
