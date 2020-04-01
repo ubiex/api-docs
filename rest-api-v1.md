@@ -3,7 +3,7 @@
 ### REST API
 
 ``
-https://api.ubiex.com
+https://api.ubiex.co
 ``
 
 鉴于延迟高和稳定性差等原因，不建议通过代理的方式访问Ubiex API。
