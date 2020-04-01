@@ -57,6 +57,7 @@ All interfaces’ returns are in JSON format.
 
 ### Error code
 Status code	| error information
+-|:-
 101	| Order failed, unknown order type
 102	| Order failed, Parameter error
 103	| Order failed, not enough funds
