@@ -617,10 +617,10 @@ id|integer|true|N/A|Order ID|
     "id": 156293034776987,          // Order ID
     "time": 1562930348000,          // Order time
     "type": 1,                      // Trading type：1、buy 0、sell
-"status": 3,                    // 状态  Status (0, submission not matched, 1, unsettled or partially completed, 2, completed, 3, cancelled, 4,matched but in the settlement)
-"completeNumber": "0.000000",   // Completed Quantities
+    "status": 3,                    // Status (0, submission not matched, 1, unsettled or partially completed, 2, completed, 3, cancelled, 4,matched but in the settlement)
+    "completeNumber": "0.000000",   // Completed Quantities
     "completeMoney": "0.000000",    // Completed amount
-    "entrustType": 0,                // Order type：1、Market price 0、Limited price
+    "entrustType": 0,               // Order type：1、Market price 0、Limited price
     "fee": "0.000000"               // Trading fees
   },
   "info": "success"
@@ -695,9 +695,9 @@ market|string|true|N/A|Trading market|btc_usdt, eth_usdt...
 data|string|true|N/A|Order data|
 
 ```
-data is a JSON array. The maximum length of the array is only 100. Anything beyond 100 will be ignored. The format of the array element is the order ID, such as:
+data is a JSON array. The maximum length of the array is only 100. Anything beyond 100 will be ignored. 
 
-[123, 456, 789]
+The format of the array element is the order ID, such as:[123, 456, 789]
 
 After the assembly is completed, the JSON array is converted to STRING, and then Base64.encode () is the final data to be submitted.
 
@@ -805,7 +805,7 @@ pageSize|integer|true|10|Quantity per page|
 			"chainName": "ERC-20",      // Public-chain name
 			"chain": "eth",             // Public chain coin
 			"address": "0x8390b456fe03139ba402f45be9110a5fadf7e862", // withdrawal address
-			"memo": "",    				// Coins like EOS may need the Memo             
+			"memo": "",    	    	    // Coins like EOS may need the Memo             
 			"coin": "usdt"              // current coins
 		}, {
 			"chainName": "omni",
@@ -851,8 +851,8 @@ pageSize|integer|true|10|Quantity per page|
  			"creatTime": 1563465915000,
  			"manageTime": 1563466260000,
  			"txHash": "0x4bcd1207e57dc96737d20198c8792c3340386e7f247571458d17671b7834ddd6", // Trading Hash
- 			"status": 2, // 0, initial 1, failure 2, success 5, pending confirmation
- 			"coin": "usdt",   // current coins
+ 			"status": 2,                // 0, initial 1, failure 2, success 5, pending confirmation
+ 			"coin": "usdt",             // current coins
  			"innerTransfer": 0			// Whether the record of the internal addresses transfer 		
  		}],
  		"pageSize": 100
