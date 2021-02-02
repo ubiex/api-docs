@@ -26,5 +26,7 @@ class HttpUtil:
         return resp.json()
 
     def post(self, url, data=None):
-        resp = requests.post(url, data, **self.KWARGS)
+        headers = {"Content-Type": "application/x-www-form-urlencoded"}
+        #resp = requests.post(url, data,**self.KWARGS)
+        resp = requests.post(url, data = data, headers = headers)
         return resp.json()

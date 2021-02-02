@@ -7,6 +7,7 @@ from python.utils.httpUtil import HttpUtil
 import hashlib
 import hmac
 import time
+import base64
 
 def getTimestamp() -> int:
     return int(round(time.time()*1000))
@@ -157,7 +158,7 @@ class UbiexSDK():
             "accesskey": self.accessKey,
             "nonce": getTimestamp(),
             "market": market,
-            "data": jsonData,
+            "data": base64.b64encode(str(jsonData).encode("utf-8")).decode("utf-8"),
         }
         dit["signature"] = getSignature(dit, self.secretKey)
         return HttpUtil().post(self.URL + "/trade/api/v1/batchOrder", dit)
@@ -185,7 +186,7 @@ class UbiexSDK():
             "accesskey": self.accessKey,
             "nonce": getTimestamp(),
             "market": market,
-            "data": ids,
+            "data": base64.b64encode(str(*ids).encode("utf-8")).decode("utf-8"),
         }
         dit["signature"] = getSignature(dit, self.secretKey)
         return HttpUtil().post(self.URL + "/trade/api/v1/batchCancel", dit)
@@ -228,7 +229,7 @@ class UbiexSDK():
             "accesskey": self.accessKey,
             "nonce": getTimestamp(),
             "market": market,
-            "data": ids,
+            "data": base64.b64encode(str(*ids).encode("utf-8")).decode("utf-8"),
         }
         dit["signature"] = getSignature(dit, self.secretKey)
         return HttpUtil().get(self.URL + "/trade/api/v1/getBatchOrders", dit)
