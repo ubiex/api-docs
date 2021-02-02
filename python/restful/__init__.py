@@ -143,14 +143,8 @@ class UbiexSDK():
         return HttpUtil().post(self.URL + "/trade/api/v1/order", dit)
 
     '''
-    批量委托
-        map.put("accesskey", accessKey);
-		map.put("nonce", System.currentTimeMillis());
-		map.put("market", "btc_usdt");
-		map.put("price", "10000.12");
-		map.put("number", "1.23");
-		map.put("type", 1);		// 0.sell 1.buy
-		map.put("entrustType", 0);	// 0.Limited price  1.Market price matching    
+    批量委托 
+    e.g data=[{"price":30000,"amount":0.001,"type":0},{"price":30000,"amount":0.001,"type":0}]
     '''
 
     def batchOrder(self, market: str, jsonData: str):
@@ -178,7 +172,8 @@ class UbiexSDK():
         return HttpUtil().post(self.URL + "/trade/api/v1/cancel", dit)
 
     '''
-    批量撤单
+    批量撤单 
+    e.g data:[20001,20002,2003]
     '''
 
     def batchCancel(self, market: str, *ids: str):
@@ -222,6 +217,7 @@ class UbiexSDK():
 
     '''
     批量获取订单
+    e.g data:[20001,20002,2003]
     '''
 
     def getBatchOrders(self, market: str, *ids: str):
